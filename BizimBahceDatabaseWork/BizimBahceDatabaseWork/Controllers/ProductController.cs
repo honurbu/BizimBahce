@@ -13,25 +13,11 @@ namespace BizimBahceDatabaseWork.Controllers
         Context context = new Context();
 
 
-        /* public List<OliveOil> GetListWithOliveOilProperty()
-         {
-             using (var c = new Context())
-             {
-                 return c.OliveOils.Include(x => x.OliveOilPrice).Include(x => x.OliveOilType).Include(x => x.OliveOilProperty).ToList();
-             }
-         }*/
-
-
         public async Task<List<OliveOil>> GetListWithOliveOilProperty()
         {
 
-            /* var values = GetListWithOliveOilProperty().ToList();
-             return View(values);
-
-             var values = context.OliveOils.ToList();
-             return View(values);*/
-
-            var oliveOils = context.OliveOils.Include(x => x.OliveOilPrice)
+            var oliveOils = context.OliveOils
+                .Include(x => x.OliveOilPrice)
                 .Include(x => x.OliveOilBenefit)
                 .Include(x => x.OliveOilProperty)
                 .Include(x => x.OliveOilType);
@@ -41,13 +27,6 @@ namespace BizimBahceDatabaseWork.Controllers
 
         public async Task<IActionResult>Index()
         {
-
-            /* var values = GetListWithOliveOilProperty().ToList();
-             return View(values);
-
-             var values = context.OliveOils.ToList();
-             return View(values);*/
-
             var oliveOils = await GetListWithOliveOilProperty();
             return View(oliveOils);
         }
@@ -55,20 +34,3 @@ namespace BizimBahceDatabaseWork.Controllers
 }
 
 
-
-
-
-
-
-
-
-
-//var values = GetListWithOliveOilProperty().ToList();
-
-/*public List<OliveOil> GetListWithOliveOilProperty()
-        {
-            using (var c = new Context())
-            {
-                return c.OliveOils.Include(x => x.OliveOilType).Include(x=>x.OliveOilPrice).Include(x=>x.OliveOilProperty).ToList();
-            }
-        }*/
