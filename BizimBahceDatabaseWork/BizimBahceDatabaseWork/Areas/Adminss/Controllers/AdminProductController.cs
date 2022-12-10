@@ -1,4 +1,5 @@
-﻿using BizimBahceDatabaseWork.Models.Context;
+﻿using BizimBahceDatabaseWork.FluentValidators;
+using BizimBahceDatabaseWork.Models.Context;
 using BizimBahceDatabaseWork.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -39,10 +40,8 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
             var products = context.OliveOils.Find(id);
             context.Remove(products);
             context.SaveChanges();
-            return RedirectToAction("ManageOils","AdminProduct");
+            return RedirectToAction("ManageOils", "AdminProduct");
         }
-
-
 
 
 
@@ -51,6 +50,57 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
         {
             var values = context.OliveOils.Find(id);
             return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult UpdateProduct(OliveOil oliveOil)
+        {
+            var oils = context.OliveOils.Find(oliveOil.OliveOilsID);
+
+            oils.OliveOilPrice.OliveOilPriceLiter = oliveOil.OliveOilPrice.OliveOilPriceLiter;
+            oils.OliveOilProperty.OliveOilDescription = oliveOil.OliveOilProperty.OliveOilDescription;
+            oils.OliveOilType.OliveOilDescription = oliveOil.OliveOilType.OliveOilDescription;
+
+            context.OliveOils.Update(oils);
+            context.SaveChanges();
+
+            return RedirectToAction("ManageOils", "AdminProduct");
+        }
+
+
+        [HttpGet]
+        public IActionResult AddProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddProduct(OliveOil oil, OliveOilBenefit benefit, OliveOilPrice price, OliveOilProperty prop, OliveOilType type)
+        {
+            OilsValidator _oilsValidator = new OilsValidator();
+            var result = _oilsValidator.Validate(oil);
+
+            OilsPropValidator _oilsPropValdidator = new OilsPropValidator();
+            var result2 = _oilsPropValdidator.Validate(prop);
+
+            if (result.IsValid)
+            {
+
+                context.OliveOils.Add(oil);
+                context.OliveOilBenefits.Add(benefit);
+                context.OliveOilPrices.Add(price);
+                context.OliveOilTypes.Add(type);               
+                context.OliveOilProperties.Add(prop);
+                
+
+                context.SaveChanges();
+
+
+                return View(oil);
+            }
+            else
+                return RedirectToAction("ManageOils", "AdminProduct");
 
         }
 

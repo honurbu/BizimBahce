@@ -167,3 +167,5 @@ C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceD
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminEdit\AdminEdit.cshtml.g.cs
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminEdit\ListAdmin.cshtml.g.cs
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminProduct\ManageOils.cshtml.g.cs
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminProduct\UpdateProduct.cshtml.g.cs
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminProduct\AddProduct.cshtml.g.cs
