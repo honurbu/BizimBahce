@@ -1,0 +1,16 @@
+﻿@model BizimBahceDatabaseWork.Models.Entities.Admin
+
+@{
+    ViewData["Title"] = "AdminEdit";
+    Layout = "~/Areas/Adminss/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AdminEdit", "AdminEdit", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Username, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Mail, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Password, new { @class = "form-control" })
+        @Html.LabelFor(m => m.About, new { @class = "form-control" })
+    </div>
+}

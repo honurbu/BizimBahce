@@ -1,0 +1,54 @@
+﻿@model BizimBahceDatabaseWork.Models.Entities.Admin
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Adminss/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form asp-action="AdminEdit" method="post" class="m-5">
+    <div class="form-group">
+        <label>Ad</label>
+        <input type="text" class="form-control" asp-for="" placeholder="Enter name">
+        <span asp-validation-for="Customer.CustomerName"></span> <br />
+    </div>
+    <div class="form-group">
+        <label>Soyad</label>
+        <input type="text" class="form-control" asp-for="Customer.CustomerSurname" placeholder="Enter surname">
+        <span asp-validation-for="Customer.CustomerSurname"></span> <br />
+
+    </div>
+    <div class="form-group">
+        <label>Şehir</label>
+        <input type="text" class="form-control" asp-for="Customer.CustomerProvince" placeholder="Enter province">
+        <span asp-validation-for="Customer.CustomerProvince"></span> <br />
+
+    </div>
+    <div class="form-group">
+        <label>E-Mail</label>
+        <input type="email" class="form-control" asp-for="Customer.CustomerMail" placeholder="Enter email">
+        <span asp-validation-for="Customer.CustomerMail"></span> <br />
+
+    </div>
+    <div class="form-group">
+        <label>Yorum Başlığı</label>
+        <input type="text" class="form-control" asp-for="CommentTitle" placeholder="Enter title">
+        <span asp-validation-for="CommentTitle"></span> <br />
+
+    </div>
+    <div class="form-group">
+        <label>Yorumunuz</label>
+        <input type="text" class="form-control" asp-for="CommentSubject" placeholder="Enter subject">
+        <span asp-validation-for="CommentSubject"></span> <br />
+
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Onalıyorum</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Onaya Gönder</button>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $("#website-navbar").css("position", "static");
+</script>

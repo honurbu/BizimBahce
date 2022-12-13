@@ -1,0 +1,71 @@
+﻿
+@model BizimBahceDatabaseWork.Models.Entities.OliveOil
+
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Areas/Adminss/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateProduct", "AdminProduct", FormMethod.Post))
+{
+
+
+    @Html.Label("Ürün Adı")
+    @Html.TextBoxFor(x => x.OliveOilType.OliveOilDescription, new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Ürün Yararı")
+    @Html.TextBoxFor(x => x.OliveOilBenefit.OliveOilBenefitDescription, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger" })*@
+
+
+    <br />
+
+    @Html.Label("Ürün Fiyatı")
+    @Html.TextBoxFor(x => x.OliveOilPrice.OliveOilPriceLiter, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger" })*@
+
+    <br />
+    @Html.Label("Blog İçeriği")
+    @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilAsidic, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
+
+    <br />
+    @Html.Label("Blog İçeriği")
+    @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilLiter, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
+
+
+
+
+    @*@Html.Label("Kategori")
+        <br />
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.cv)*@
+
+    <br />
+
+
+
+    <br />
+    @Html.Label("Blog İçeriği")
+    @Html.TextAreaFor(x => x.OliveOilProperty.OliveOilDescription, 15, 3, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
+
+
+    <br />
+    <br />
+
+    <button class="btn btn-success" id="btn1">Güncelle</button>
+
+    <script>
+        $('#btn1').click(function () {
+
+            swal("Blog'unuz Sisteme Yüklenmiştir. İyi Okumalar !");
+        });
+
+    </script>
+
+
+
+}

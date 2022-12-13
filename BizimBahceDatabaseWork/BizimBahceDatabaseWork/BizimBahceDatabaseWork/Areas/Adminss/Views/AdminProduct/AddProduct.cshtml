@@ -1,0 +1,48 @@
+﻿@model BizimBahceDatabaseWork.Models.Entities.OliveOil
+
+
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Areas/Adminss/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddProduct", "AdminProduct", FormMethod.Post))
+{
+    @Html.Label("Yağ Adı")
+    @Html.TextBoxFor(x => x.OliveOilType.OliveOilDescription, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OliveOilType.OliveOilDescription, "", new { @class = "text-danger" })
+
+
+    <br />
+    @Html.Label("Ürün Fiyatı")
+    @Html.TextBoxFor(x => x.OliveOilPrice.OliveOilPriceLiter, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OliveOilPrice.OliveOilPriceLiter, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Ürün Fayda")
+    @Html.TextBoxFor(x => x.OliveOilBenefit.OliveOilBenefitDescription, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OliveOilBenefit.OliveOilBenefitDescription, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Ürün Asit Özelliği")
+    @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilAsidic, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OliveOilProperty.OliveOilAsidic, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Ürün Litre")
+    @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilLiter, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OliveOilProperty.OliveOilLiter, "", new { @class = "text-danger" })
+    <br />
+    <br />
+    @Html.Label("Ürün Açıklama")
+    @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilDescription, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.OliveOilProperty.OliveOilDescription, "", new { @class = "text-danger" })
+    <br />
+
+
+    <br />
+    <br />
+
+    <button class="btn btn-info" id="btn1">Ürünü Kaydet</button>
+
+}

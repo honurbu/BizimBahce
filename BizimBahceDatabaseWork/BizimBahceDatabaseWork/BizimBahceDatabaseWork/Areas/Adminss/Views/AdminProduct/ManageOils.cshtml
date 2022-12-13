@@ -1,0 +1,67 @@
+﻿
+@using BizimBahceDatabaseWork.Models.Entities
+@model List<OliveOil>
+
+@{
+    ViewData["Title"] = "ManageOils";
+    Layout = "~/Areas/Adminss/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Yönetimi</h1>
+
+
+<html>
+<body>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Ürün Tablosu</h5>
+                        <div class="ibox-tools">
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Ürün ID</th>
+                                    <th>Ürün Türü</th>
+                                    <th>Ürün Açıklaması</th>
+                                    <th>Ürün Fiyatı</th>
+                                    <th>Sil</th>
+                                    <th>Düzenle</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.OliveOilsID</td>
+                                        <td>@item.OliveOilType.OliveOilDescription</td>
+                                        <td>@item.OliveOilProperty.OliveOilDescription.Substring(0, item.OliveOilProperty.OliveOilDescription.Substring(0, 10).LastIndexOf(" "))...</td>
+                                        @*<td>@item.OliveOilProperty.OliveOilDescription</td>*@
+                                        <td>@item.OliveOilPrice.OliveOilPriceLiter </td>
+                                        <td><a href="/Adminss/AdminProduct/ProductDelete/@item.OliveOilsID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Adminss/AdminProduct/UpdateProduct/@item.OliveOilsID" class="btn btn-outline-success">Düzenle</a></td>
+                                    </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/Adminss/AdminProduct/AddProduct" class="btn btn-primary">Yeni Ürün Ekle</a>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $("div.main-panel div.content-wrapper").css("overflow-x", "auto");
+            </script>
+        </body>
+        </html>
+

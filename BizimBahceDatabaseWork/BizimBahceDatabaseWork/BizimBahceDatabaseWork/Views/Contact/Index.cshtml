@@ -1,0 +1,99 @@
+﻿@model BizimBahceDatabaseWork.Models.Entities.Message
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_OliveLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ulaşım</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <!-- Navbar End -->
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">İletişim</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Contact</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    <!-- Contact Start -->
+    <div class="container-fluid pt-5 pl-0 pr-0">
+        <div class="container">
+            @await Component.InvokeAsync("Contacts")
+            <div class="col-md-6 pb-5">
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form asp-action="Index" method="post" class="m-5">
+                        <div class="form-group">
+                            <label>Ad-Soyad</label>
+                            <input type="text" class="form-control" asp-for="MsgOwner" placeholder="Ad-Soyad">
+                            <span asp-validation-for="MsgOwner"></span> <br />
+                        </div>
+                        <div class="form-group">
+                            <label>E-Mail</label>
+                            <input type="email" class="form-control" asp-for="MsgMail" placeholder="E-Mail">
+                            <span asp-validation-for="MsgMail"></span> <br />
+                        </div>
+                        <div class="form-group">
+                            <label>Mesaj Başlığı</label>
+                            <input type="text" class="form-control" asp-for="MsgTitle" placeholder="Başlık">
+                            <span asp-validation-for="MsgTitle"></span> <br />
+                        </div>
+                        <div class="form-group">
+                            <label>Mesajınız</label>
+                            <input type="text" class="form-control" asp-for="MsgContent" placeholder="İçerik">
+                            <span asp-validation-for="MsgContent"></span> <br />
+                        </div>
+                        <div>
+                            <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit" id="sendMessageButton">
+                                Mesajı
+                                Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    <!-- Contact End -->
+    <!-- Footer Start -->
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+</body>
+
+</html>
