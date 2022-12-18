@@ -1,5 +1,6 @@
 ﻿using BizimBahceDatabaseWork.Models.Context;
 using BizimBahceDatabaseWork.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,9 @@ using System.Linq;
 namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 {
     [Area("Adminss")]
+
+    [Authorize]
+
     public class CustomerCommentController : Controller
     {
         Context context = new Context();

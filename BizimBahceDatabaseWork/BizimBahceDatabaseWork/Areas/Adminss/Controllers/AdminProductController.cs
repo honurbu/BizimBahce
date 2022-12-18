@@ -1,7 +1,9 @@
 ﻿using BizimBahceDatabaseWork.FluentValidators;
 using BizimBahceDatabaseWork.Models.Context;
 using BizimBahceDatabaseWork.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,9 @@ using System.Threading.Tasks;
 namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 {
     [Area("Adminss")]
+
+
+    [Authorize]
 
     public class AdminProductController : Controller
     {
@@ -49,7 +54,8 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
         public IActionResult UpdateProduct(int id)
         {
             var values = context.OliveOils.Find(id);
-            return View();
+
+            return View(values);
 
         }
 
@@ -97,10 +103,11 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
                 context.SaveChanges();
 
 
-                return View(oil);
+                return RedirectToAction("ManageOils", "AdminProduct");
+
             }
             else
-                return RedirectToAction("ManageOils", "AdminProduct");
+                return View(oil);
 
         }
 

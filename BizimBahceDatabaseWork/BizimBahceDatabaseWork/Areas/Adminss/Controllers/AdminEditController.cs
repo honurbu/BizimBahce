@@ -1,10 +1,15 @@
 ﻿using BizimBahceDatabaseWork.Models.Context;
 using BizimBahceDatabaseWork.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 {
     [Area("Adminss")]
+
+
+    [Authorize]
+
     public class AdminEditController : Controller
     {
         Context context = new Context();
