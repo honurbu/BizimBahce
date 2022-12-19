@@ -16,10 +16,23 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
         Context context = new Context();
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int id=1)
         {
-            //var values = context.Admins.ToList();
-            return View();
+
+            Admin admin = new Admin();
+            if (id == null)
+            {
+                return View(admin);
+            }
+
+            admin = context.Admins.FirstOrDefault(x => x.AdminID == id);
+
+            if (admin == null)
+            {
+                return NotFound();
+            }
+
+            return View(admin);
         }
 
         [HttpPost]

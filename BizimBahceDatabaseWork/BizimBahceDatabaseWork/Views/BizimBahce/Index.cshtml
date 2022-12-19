@@ -1,4 +1,6 @@
-﻿
+﻿@using BizimBahceDatabaseWork.Models.Entities
+@model List<OliveOil>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_OliveLayout.cshtml";
@@ -10,7 +12,7 @@
 
 <body>
     <!-- Navbar Start -->
-    
+
 
     <div class="container-fluid p-0 mb-5">
         <div id="blog-carousel" class="carousel slide overlay-bottom" data-ride="carousel">
@@ -47,13 +49,13 @@
         <div class="container">
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Hakkımızda</h4>
-                <h1 class="display-4">2020'den Beri Sofralarınızdayız...</h1>
+                <h1 class="display-4">1993'den Beri Sofralarınızdayız...</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Hikayemiz</h1>
-                    <h5 class="mb-3">Dalından koparak sofranıza gelen soğuk sıkım zeytinyağlarımızı siz müşterilerimize servis etmekten mutluluk duyuyoruz</h5>
-                    <p>Balıkesir'in Gönen ilçesinden toplanan en güzel ve en organik zeytinleri toplayıp, değirmenlerimizde soğuk sıkım yaptıktan sonra hiçbir koruyucu, katkı maddesi eklemeden siz değerli müşteriliermizin sofralarına yolcu ediyoruz. </p>
+                    <p>Dalından koparak sofranıza gelen soğuk sıkım zeytinyağlarımızı siz müşterilerimize sunmaktan mutluluk duyuyoruz.<br />Bahçemizden özenle topladığımız zeytinlerimizi aynı gün tesislerimizde hiçbir koruyucu, katkı maddesi içermeden sıkma işlemi gerçekleştirilmektedir. Aynı gün el değmeden steril ortamda paketlenerek siz değerli müşterilermizin sofralarına yolcu ediyoruz. <p>
+                    <p></p>
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -62,7 +64,7 @@
                 </div>
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Vizyonumuz</h1>
-                    <p>Zeytinyağı mucizevi besinlerden biridir. Akdeniz ülkelerinde yetişen zeytin ağaçlarındaki zeytinlerden elde edilen zeytinyağı doğal bir şifa kaynağıdır. Vücudu yenileyen, kanserli hücrelere karşı savaşan zeytinyağı doymamış yağ asitleri ile aynı zamanda antioksidan açısından da zengindir. Cilt ve saç bakımı için de kullanımı önerilir</p>
+                    <p>Zeytinyağı doğadan gelen mucizevi besinlerden biridir. Bizler bu mucizeyi kendi soframızdan alarak önce bölgemizde sonra tüm Türkiye'deki sofralara konuk etmekte kararlıyız. Vücudu yenileyen, kanserli hücrelere karşı savaşan zeytinyağı doymamış yağ asitleri ile aynı zamanda antioksidan açısından da zengindir. Bu zenginliği en organik hali ile sofralarınıza sunmayı hedefliyoruz.</p>
                 </div>
             </div>
         </div>
@@ -79,13 +81,13 @@
                 <div class="col-lg-6 mb-5">
                     <div class="row align-items-center">
                         <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="~/web/img/dene4.png" alt="">
+                            <img class="img-fluid mb-3 mb-sm-0" src="~/web/img/dene3.png" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="~/web/fa fa-truck service-icon"></i>Hızlı Ulaştırma</h4>
-                            <p class="m-0">
-                                Siparişl vermiş olduğunuz zeytinyağlarınız, siz siparişi verdiğiniz andan itibaren 1 gün süre ile adresinize kargolanmaktadır. Üstelik şeffaf kargo ile ulaşım sağlanmaktadır.
-                            </p>
+                            <h4><i class="fa fa-truck service-icon"></i>Hızlı Ulaştırma</h4>
+                                <p class="m-0">
+                                    Tüm siparişleriniz aynı gün kargoya verilmektedir. ( 1-3 ) iş günü içerisinde adresinize teslim edilmektedir.Kapıda ödeme seçeneğimiz ile siz değerli müşterilerimize hizmet vermekteyiz.
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -95,9 +97,9 @@
                             <img class="img-fluid mb-3 mb-sm-0" src="~/web/img/dal.png" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="~/web/fa fa-coffee service-icon"></i>Taze Dalından Zeytin Yağı</h4>
+                            <h4><i class="fa fa-tree service-icon"></i>Taze Dalından Zeytin </h4>
                             <p class="m-0">
-                                Dalından toplamış olduğumuz zeytinyağlarımızı siz değerli tüketicilerimizin sofralarına hiçbir katkı maddesi kullanmadan sunmaktayız.
+                                Dalından toplamış olduğumuz zeytinlerimizi siz değerli müşterilerimizin sofralarına hiçbir katkı maddesi kullanmadan sunmaktayız.
                             </p>
                         </div>
                     </div>
@@ -108,9 +110,9 @@
                             <img class="img-fluid mb-3 mb-sm-0" src="~/web/img/dal2.png" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="~/web/fa fa-award service-icon"></i>En İyi Kalite</h4>
+                            <h4><i class="fa fa-award service-icon"></i>En İyi Kalite</h4>
                             <p class="m-0">
-                                En kaliteli zeytinlerden yapılan zeytinyağlarımız doğal olarak en kaliteli şekilde sizlerle buluşmaktadır.
+                                Dalından özenle toplamış olduğumuz zeytinlerimizi aynı gün sıkma işlemini gerçekleştirip, aynı gün paketlenmektedir.
                             </p>
                         </div>
                     </div>
@@ -121,9 +123,9 @@
                             <img class="img-fluid mb-3 mb-sm-0" src="~/web/img/yemek.png" alt="">
                         </div>
                         <div class="col-sm-7">
-                            <h4><i class="~/web/fa fa-table service-icon"></i>Tüketimi</h4>
+                            <h4><i class="fa fa-table service-icon"></i>Tüketimi</h4>
                             <p class="m-0">
-                                Yumuşak tadı ile zeytinyağlarımızı ister zeytin ile birlikte ister ise yemeklerinizde gönül rahatlığı ile kullanabilirsiniz.
+                                Zeytinyağlarımızı ısıl işleme maruz bırakmadan teneke ile ambalajlayarak siz değerli müşterilerimizin sofralarına ulaştırmaktayız.
                             </p>
                         </div>
                     </div>
@@ -139,25 +141,36 @@
         <div class="container">
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Zeytinyağı Çeşitlerimiz & Fiyatlarımız</h4>
-                <h1 class="display-4">Bütçe Dostu Fiyatlandırma</h1>
+                <h1 class="display-4">En Düşük Asit Oranları</h1>
+                <p>
+                    Asitlik derecesi, gıda sektöründe ürünün aromasını, lezzetini ve kullanım ömrünü belirleyen önemli konulardan biridir. Asitlik derecesi, söz konusu kokusu gıda ürününün aromasını ve tadını belirleyen önemli bir unsurdur.
+                    Asitlik derecesi, aynı zamanda gıda ürünü içerisinde bakteri ve mantar gibi mikroorganizmaların büyüme kabiliyetini de etkiler. Bu sebeple gıda ürünlerini depolama olanaklarıyla ilgili konularda söz konusu ürünün asitlik derecesinin yakından izlenmesi gerekmektedir.
+                    Zeytinyağı ürünleri de gliserin ve oleik asit maddelerinin birleşmesinden oluşmaktadır. Bu karışımdaki oleik asit, gliserin içerisinde tam anlamıyla karışmaz, bir kısmı yağ zeytinyağı içerisinde serbest kalır. 
+                    Serbest kalan oleik asit miktarı ne kadar az olursa zeytinyağı güzel ve lezzetli olur. Bu nedenle her gıda maddesinde olduğu gibi zeytinyağının da asitlik derecesi önemlidir. Asitlik derecesi, zeytinyağı ürününün kalitesini belirleyen önemli unsurlardan biridir. 
+                    Zeytinyağı ürünlerinin oleik asit oranları, 100 gr’da bulunan yağ oranı ile belirlenmektedir. Zeytinyağların yağ oranları, bu sebeple yüzdelik olarak verilmektedir. En iyi zeytinyağı ürünlerinin asit oranları %0,1 ile %1 arası asit oranına sahip ürünlerdir. Asit oranı %2’den az olan zeytinyağları, ‘natürel birinci’ olarak adlandırılır.
+                    Asit oranı %0,8’e kadar olan zeytinyağları, ‘sızma’ olarak adlandırılmaktadır. %2-3 zeytinyağı asit oranları olanlara ise ‘naturel ikinci’ adı verilmektedir. İdeal asitlik derecesi düşük olduğu için bu yağlar diğer yağlara göre daha kaliteli ve pahalı ürünlerdir.
+                </p>
             </div>
-
+           
             <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="mb-5">Taze Sıkım</h1>
-                    <div class="row align-items-center mb-5">
-                        <div class="col-4 col-sm-3">
-                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="~/web/img/oil3.png" alt="">
-                            <h5 class="menu-price">150</h5>
-                        </div>
-                        <div class="col-8 col-sm-9">
-                            <h4> 2 Litrelik Teneke </h4>
-                            <p class="m-0">Şifanız 2 Litrelik şişelerimizde sizleri bekliyor.</p>
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-6">
+                        @* <h1 class="mb-5">Asit Oranlarımız</h1>*@
+                        <div class="row align-items-center mb-5">
+                            <div class="col-4 col-sm-3">
+                                <img class="w-100 rounded-circle mb-3 mb-sm-0" src="~/web/img/oil3.png" alt="">
+                                <h5 class="menu-price">@item.OliveOilProperty.OliveOilAsidic</h5>
+                            </div>
+                            <div class="col-8 col-sm-9">
+                                <h4> @item.OliveOilType.OliveOilDescription</h4>
+                                <p class="m-0">Zeytinyağlarımızın oranları özel laboratuvar ortamlarında testlere tabii tutularak edilerek tespit edilmiştir.</p>
+                            </div>
                         </div>
                     </div>
+                }
 
-                </div>
-                <div class="col-lg-6">
+                @*<div class="col-lg-6">
                     <h1 class="mb-5">Soğuk Sıkım</h1>
                     <div class="row align-items-center mb-5">
                         <div class="col-4 col-sm-3">
@@ -170,13 +183,13 @@
                         </div>
                     </div>
 
-                </div>
+                </div>*@
             </div>
 
         </div>
     </div>
 
-    
+
     <!-- Footer End -->
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>

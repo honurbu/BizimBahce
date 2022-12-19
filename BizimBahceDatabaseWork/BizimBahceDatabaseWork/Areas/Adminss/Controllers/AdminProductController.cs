@@ -53,26 +53,42 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
         [HttpGet]
         public IActionResult UpdateProduct(int id)
         {
-            var values = context.OliveOils.Find(id);
+            OliveOil oils = new OliveOil();
+            if(id== null)
+            {
+                return View(oils);
+            }
 
-            return View(values);
+            oils = context.OliveOils.FirstOrDefault(x=>x.OliveOilsID==id);
+        
+
+            if(oils == null)
+            {
+                return NotFound();
+            }
+
+            return View(oils);
 
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]  //for mvc post security. bots barcet
         public IActionResult UpdateProduct(OliveOil oliveOil)
         {
             var oils = context.OliveOils.Find(oliveOil.OliveOilsID);
 
+            oils.OliveOilsID = oliveOil.OliveOilsID;
             oils.OliveOilPrice.OliveOilPriceLiter = oliveOil.OliveOilPrice.OliveOilPriceLiter;
             oils.OliveOilProperty.OliveOilDescription = oliveOil.OliveOilProperty.OliveOilDescription;
             oils.OliveOilType.OliveOilDescription = oliveOil.OliveOilType.OliveOilDescription;
+            oils.OliveOilBenefit.OliveOilBenefitDescription = oliveOil.OliveOilBenefit.OliveOilBenefitDescription;
 
             context.OliveOils.Update(oils);
             context.SaveChanges();
 
             return RedirectToAction("ManageOils", "AdminProduct");
         }
+
 
 
         [HttpGet]
