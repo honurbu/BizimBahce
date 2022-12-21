@@ -35,7 +35,7 @@
     <br />
     <br />
     @Html.Label("Ürün Açıklama")
-    @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilDescription, new { @class = "form-control" })
+    @Html.TextAreaFor(x => x.OliveOilProperty.OliveOilDescription, 15, 3, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.OliveOilProperty.OliveOilDescription, "", new { @class = "text-danger" })
     <br />
 

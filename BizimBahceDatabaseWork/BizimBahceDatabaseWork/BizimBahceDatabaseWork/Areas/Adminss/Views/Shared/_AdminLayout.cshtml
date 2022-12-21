@@ -37,12 +37,6 @@
                 </button>
                 <div class="search-field d-none d-md-block">
                     <form class="d-flex align-items-center h-100" action="#">
-                        <div class="input-group">
-                            <div class="input-group-prepend bg-transparent">
-                                <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                            </div>
-                            <input type="text" class="form-control bg-transparent border-0" placeholder="Aranacak Kelimeyi Giriniz">
-                        </div>
                     </form>
                 </div>
                 <ul class="navbar-nav navbar-nav-right">
@@ -57,11 +51,11 @@
                             </div>
                         </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item" href="/Author/AuthorEditProfile/">
+                            <a class="dropdown-item" href="/Adminss/AdminEdit/ListAdmin/">
                                 <i class="mdi mdi-cached mr-2 text-success"></i> Ayarlar
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/Login/LogOut/">
+                            <a class="dropdown-item" href="/Adminss/Login/LogOut/">
                                 <i class="mdi mdi-logout mr-2 text-primary"></i> Çıkış Yap
                             </a>
                         </div>
@@ -72,21 +66,14 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link" href="/Adminss/CustomerMessages/Index/">
                             <i class="mdi mdi-email-outline"></i>
                             <span class="count-symbol bg-warning"></span>
                         </a>
-                        @*    @await Component.InvokeAsync("AuthorMessageNotification")*@
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count-symbol bg-danger"></span>
-            </a>
-         @*   @await Component.InvokeAsync("AuthorNotification") *@
-                    </li>
+        
                     <li class="nav-item nav-logout d-none d-lg-block">
-                        <a class="nav-link" href="/Login/LogOut/">
+                        <a class="nav-link" href="/Adminss/Login/LogOut/">
                             <i class="mdi mdi-power"></i>
                         </a>
                     </li>

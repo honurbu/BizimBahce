@@ -25,11 +25,14 @@ namespace BizimBahceDatabaseWork.Controllers
             return await oliveOils.ToListAsync();
         }
 
+
         public async Task<IActionResult>Index()
         {
             var oliveOils = await GetListWithOliveOilProperty();
             return View(oliveOils);
         }
+        
+
     }
 }
 

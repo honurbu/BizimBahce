@@ -11,7 +11,7 @@ namespace BizimBahceDatabaseWork.FluentValidators
             RuleFor(x => x.OliveOilBenefit.OliveOilBenefitDescription).NotNull().WithMessage("Yararlar Alanı Boş Geçilemez !");
             RuleFor(x => x.OliveOilType.OliveOilDescription).NotNull().WithMessage("Tür Alanı Boş Geçilemez !");
             RuleFor(x => x.OliveOilProperty.OliveOilDescription).NotNull().WithMessage("Özellik Alanı Boş Geçilemez !");
-            RuleFor(x => x.OliveOilProperty.OliveOilDescription).MinimumLength(75).WithMessage("Minimum 75 Karakter Giriniz !");
+            RuleFor(x => x.OliveOilProperty.OliveOilDescription).MinimumLength(20).WithMessage("Minimum 10 Karakter Giriniz !");
             RuleFor(x => x.OliveOilProperty.OliveOilAsidic).NotNull().WithMessage("Asit Oranı Boş Geçilemez !");
             RuleFor(x => x.OliveOilProperty.OliveOilLiter).NotNull().WithMessage("Litre alanı Boş Geçilemez !");
 

@@ -2,6 +2,7 @@ using BizimBahceDatabaseWork.FluentValidators;
 using BizimBahceDatabaseWork.Models.Entities;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,15 @@ namespace BizimBahceDatabaseWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddMvc();
+            services.AddAuthentication
+                (CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x =>
+                {
+                    x.LoginPath = "/Adminss/Login/Index/";
+                });
+
             services.AddControllersWithViews().AddFluentValidation(options =>
 
              options.RegisterValidatorsFromAssemblyContaining<Startup>());
@@ -36,6 +46,8 @@ namespace BizimBahceDatabaseWork
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseAuthentication();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

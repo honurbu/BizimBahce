@@ -1,18 +1,49 @@
 ﻿using BizimBahceDatabaseWork.Models.Context;
 using BizimBahceDatabaseWork.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 {
     [Area("Adminss")]
+
+
+    [Authorize]
+
     public class AdminEditController : Controller
     {
         Context context = new Context();
 
         public IActionResult ListAdmin()
         {
-            return View();
+            var values = context.Admins.ToList();
+            return View(values);
         }
+
+
+
+        [HttpGet]
+        public IActionResult AdminEdit(int id)
+        {
+
+            Admin admin = new Admin();
+            if (id == null)
+            {
+                return View(admin);
+            }
+
+            admin = context.Admins.FirstOrDefault(x=>x.AdminID==id);
+
+            if (admin == null)
+            {
+                return NotFound();
+            }
+
+            return View(admin);
+
+        }
+
 
         [HttpPost]
          public IActionResult AdminEdit(Admin admin)
@@ -23,8 +54,9 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
              admins.About=admin.About;
              admins.Mail = admin.Mail;
              admins.Password=admin.Password;
+             context.Update(admins);
              context.SaveChanges();
-             return RedirectToAction("Index","Dashboard");
+             return RedirectToAction("Dashboard","Dashboard");
 
          }
     }
