@@ -41,8 +41,8 @@
                                     <tr>
                                         <td>@item.OliveOilsID</td>
                                         <td>@item.OliveOilType.OliveOilDescription</td>
-                                        <td>@item.OliveOilProperty.OliveOilDescription.Substring(0, item.OliveOilProperty.OliveOilDescription.Substring(0, 10).LastIndexOf(" "))...</td>
-                                        @*<td>@item.OliveOilProperty.OliveOilDescription</td>*@
+                                        <td>@item.OliveOilProperty.OliveOilDescription.Substring(0, item.OliveOilProperty.OliveOilDescription.Substring(0, 20).LastIndexOf(" "))...</td>
+                                        @*  <td>@item.OliveOilProperty.OliveOilDescription</td>*@
                                         <td>@item.OliveOilPrice.OliveOilPriceLiter </td>
                                         <td><a href="/Adminss/AdminProduct/ProductDelete/@item.OliveOilsID" class="btn btn-outline-danger">Sil</a></td>
                                         <td><a href="/Adminss/AdminProduct/UpdateProduct/@item.OliveOilsID" class="btn btn-outline-success">Düzenle</a></td>

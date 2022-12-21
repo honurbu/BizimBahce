@@ -1,4 +1,4 @@
-﻿
+﻿@using BizimBahceDatabaseWork.Models.Entities
 @model BizimBahceDatabaseWork.Models.Entities.OliveOil
 
 @{
@@ -8,64 +8,48 @@
 
 @using (Html.BeginForm("UpdateProduct", "AdminProduct", FormMethod.Post))
 {
+    @Html.Label("Yağ Id")
+    @Html.TextBoxFor(x => x.OliveOilsID, new { @class = "form-control, @readonly=true" })
+    <br />
 
 
-    @Html.Label("Ürün Adı")
+    @Html.Label("Yağ Adı")
     @Html.TextBoxFor(x => x.OliveOilType.OliveOilDescription, new { @class = "form-control" })
     <br />
 
 
-    @Html.Label("Ürün Yararı")
-    @Html.TextBoxFor(x => x.OliveOilBenefit.OliveOilBenefitDescription, new { @class = "form-control" })
-    @*@Html.ValidationMessageFor(x => x.BlogTitle, "", new { @class = "text-danger" })*@
-
-
-    <br />
-
-    @Html.Label("Ürün Fiyatı")
+    @Html.Label("Yağ Fiyatı")
     @Html.TextBoxFor(x => x.OliveOilPrice.OliveOilPriceLiter, new { @class = "form-control" })
-    @*@Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger" })*@
 
     <br />
-    @Html.Label("Blog İçeriği")
+
+
+    @Html.Label("Yağ Asit Oranı")
     @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilAsidic, new { @class = "form-control" })
-    @*@Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
 
     <br />
-    @Html.Label("Blog İçeriği")
+    @Html.Label("Yağ Litresi")
     @Html.TextBoxFor(x => x.OliveOilProperty.OliveOilLiter, new { @class = "form-control" })
-    @*@Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
-
-
-
-
-    @*@Html.Label("Kategori")
-        <br />
-        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.cv)*@
-
     <br />
 
 
 
-    <br />
-    @Html.Label("Blog İçeriği")
-    @Html.TextAreaFor(x => x.OliveOilProperty.OliveOilDescription, 15, 3, new { @class = "form-control" })
-    @*@Html.ValidationMessageFor(x => x.BlogContent, "", new { @class = "text-danger" })*@
+    @Html.Label("Yağ Yararı")
+    @Html.TextAreaFor(x => x.OliveOilBenefit.OliveOilBenefitDescription, 10,3, new { @class = "form-control" })
 
+    <br />
+    @Html.Label("Yağ Özellikleri")
+    @Html.TextAreaFor(x => x.OliveOilProperty.OliveOilDescription, 10, 3, new { @class = "form-control" })
+
+
+
+
+
+    <br />
 
     <br />
     <br />
 
     <button class="btn btn-success" id="btn1">Güncelle</button>
-
-    <script>
-        $('#btn1').click(function () {
-
-            swal("Blog'unuz Sisteme Yüklenmiştir. İyi Okumalar !");
-        });
-
-    </script>
-
-
 
 }

@@ -16,10 +16,23 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
         Context context = new Context();
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int id=1)
         {
-            //var values = context.Admins.ToList();
-            return View();
+
+            Admin admin = new Admin();
+            if (id == null)
+            {
+                return View(admin);
+            }
+
+            admin = context.Admins.FirstOrDefault(x => x.AdminID == id);
+
+            if (admin == null)
+            {
+                return NotFound();
+            }
+
+            return View(admin);
         }
 
         [HttpPost]
@@ -31,8 +44,12 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
             values.Mail = admin.Mail;
             values.About = admin.About;
             values.Password = admin.Password;
+            context.Admins.Update(values);
             context.SaveChanges();
             return RedirectToAction("Dashboard","Dashboard");
         }
     }
 }
+
+
+//parametre gitmediği için güncelleme işlemi gerçekleşmiyor. Aynı durum Ürün Güncellede de mevcut.s

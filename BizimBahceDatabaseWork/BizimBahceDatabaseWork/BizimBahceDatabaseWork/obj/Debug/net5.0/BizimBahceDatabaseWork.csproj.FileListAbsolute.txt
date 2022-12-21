@@ -171,3 +171,9 @@ C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceD
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminProduct\AddProduct.cshtml.g.cs
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\AdminProfile\Index.cshtml.g.cs
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Areas\Adminss\Views\Login\Index.cshtml.g.cs
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\BizimBahceDatabaseWork.StaticWebAssets.Pack.cache
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.BizimBahceDatabaseWork.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.build.BizimBahceDatabaseWork.props
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.BizimBahceDatabaseWork.props
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.BizimBahceDatabaseWork.props
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Views\TestProduct\Index.cshtml.g.cs
