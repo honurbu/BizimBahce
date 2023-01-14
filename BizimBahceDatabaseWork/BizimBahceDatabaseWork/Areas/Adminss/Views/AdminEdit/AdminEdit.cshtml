@@ -6,8 +6,7 @@
 }
 
 
-
-@using (Html.BeginForm("AdminEdit", "AdminEdit", FormMethod.Post))
+@using (Html.BeginForm("AdminEdit", "AdminEdit", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 
     @Html.Label("Admin Id")
@@ -31,6 +30,13 @@
     <br />
     @Html.Label("Admin Şifre")
     @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+
+    <br />
+
+
+    <br>
+    <br>
+
 
     <br />
 

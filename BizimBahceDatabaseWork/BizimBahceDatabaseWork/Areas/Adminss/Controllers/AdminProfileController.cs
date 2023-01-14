@@ -52,4 +52,3 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 }
 
 
-//parametre gitmediği için güncelleme işlemi gerçekleşmiyor. Aynı durum Ürün Güncellede de mevcut.s

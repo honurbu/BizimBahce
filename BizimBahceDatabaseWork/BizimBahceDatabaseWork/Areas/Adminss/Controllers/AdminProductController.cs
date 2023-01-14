@@ -59,8 +59,12 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
                 return View(oils);
             }
 
-            oils = context.OliveOils.FirstOrDefault(x=>x.OliveOilsID==id);
-        
+            oils = context.OliveOils.Include(x => x.OliveOilPrice)
+                .Include(x => x.OliveOilBenefit)
+                .Include(x => x.OliveOilProperty)
+                .Include(x => x.OliveOilType).
+            FirstOrDefault(x=>x.OliveOilsID==id);
+            
 
             if(oils == null)
             {
@@ -78,10 +82,10 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
             var oils = context.OliveOils.Find(oliveOil.OliveOilsID);
 
             oils.OliveOilsID = oliveOil.OliveOilsID;
-            oils.OliveOilPrice.OliveOilPriceLiter = oliveOil.OliveOilPrice.OliveOilPriceLiter;
-            oils.OliveOilProperty.OliveOilDescription = oliveOil.OliveOilProperty.OliveOilDescription;
-            oils.OliveOilType.OliveOilDescription = oliveOil.OliveOilType.OliveOilDescription;
-            oils.OliveOilBenefit.OliveOilBenefitDescription = oliveOil.OliveOilBenefit.OliveOilBenefitDescription;
+            oils.OliveOilPrice = oliveOil.OliveOilPrice;
+            oils.OliveOilProperty= oliveOil.OliveOilProperty;
+            oils.OliveOilType = oliveOil.OliveOilType;
+            oils.OliveOilBenefit = oliveOil.OliveOilBenefit;
 
             context.OliveOils.Update(oils);
             context.SaveChanges();

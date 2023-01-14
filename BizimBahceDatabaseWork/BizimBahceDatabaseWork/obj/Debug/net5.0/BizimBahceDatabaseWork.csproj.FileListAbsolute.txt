@@ -176,3 +176,4 @@ C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceD
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.build.BizimBahceDatabaseWork.props
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.BizimBahceDatabaseWork.props
 C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.BizimBahceDatabaseWork.props
+C:\Users\Onur\Desktop\Windows Form Projelerim\BizimBahceDatabaseWork\BizimBahceDatabaseWork\obj\Debug\net5.0\Razor\Views\TestProduct\Index.cshtml.g.cs

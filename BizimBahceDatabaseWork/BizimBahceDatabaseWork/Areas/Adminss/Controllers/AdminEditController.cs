@@ -1,8 +1,13 @@
 ﻿using BizimBahceDatabaseWork.Models.Context;
 using BizimBahceDatabaseWork.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 {
@@ -33,7 +38,7 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
                 return View(admin);
             }
 
-            admin = context.Admins.FirstOrDefault(x=>x.AdminID==id);
+            admin = context.Admins.FirstOrDefault(x => x.AdminID == id);
 
             if (admin == null)
             {
@@ -46,18 +51,23 @@ namespace BizimBahceDatabaseWork.Areas.Adminss.Controllers
 
 
         [HttpPost]
-         public IActionResult AdminEdit(Admin admin)
-         {
-           
-             var admins = context.Admins.Find(admin.AdminID);
-             admins.Username = admin.Username;
-             admins.About=admin.About;
-             admins.Mail = admin.Mail;
-             admins.Password=admin.Password;
-             context.Update(admins);
-             context.SaveChanges();
-             return RedirectToAction("Dashboard","Dashboard");
+        public IActionResult AdminEdit(Admin admin)
+        {
 
-         }
+            var admins = context.Admins.Find(admin.AdminID);
+
+            admins.Username = admin.Username;
+            admins.About = admin.About;
+            admins.Mail = admin.Mail;
+            admins.Password = admin.Password;
+
+
+
+
+            context.Update(admins);
+            context.SaveChanges();
+            return RedirectToAction("Dashboard", "Dashboard");
+
+        }
     }
 }

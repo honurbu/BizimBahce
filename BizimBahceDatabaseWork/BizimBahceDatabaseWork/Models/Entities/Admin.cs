@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BizimBahceDatabaseWork.Models.Entities
 {
@@ -14,5 +16,6 @@ namespace BizimBahceDatabaseWork.Models.Entities
         public string Password { get; set; }
 
         public string About { get; set; }
+
     }
 }
